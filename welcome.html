@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes loader {
+      0% {
+        transform: translateX(-30px);
+      }
+      100% {
+        transform: translateX(150px);
+      }
+    }
+
+    .gradient-box {
+      background: linear-gradient(to bottom, #2838c7 0%, #5979ef 17%, #869ef3 32%, #869ef3 45%, #5979ef 59%, #2838c7 100%);
+    }
+
+    .animate-loader {
+      animation: loader 2s infinite linear;
+    }
+  </style>
+  <script>
+  let titles = ["Welcome"];
+let index = 0;
+
+let interval = setInterval(() => {
+  if (index < titles.length) {
+    document.title = titles[index];
+    index++;
+  } else {
+    clearInterval(interval); // Stop the interval when all titles are shown
+  }
+}, 4000);
+
+    setTimeout(function() {
+      document.getElementById('loading-screen').classList.add('hidden');
+      document.getElementById('image-screen').classList.remove('hidden');
+    }, 4000);
+    setTimeout(function() {
+    window.location.href = "xp.html";
+    }, 7000);
+  </script>
+</head>
+<body class="bg-black flex flex-col justify-between min-h-screen text-white overflow-hidden">
+  <div id="loading-screen" class="flex flex-col items-center justify-center flex-grow overflow-hidden">
+    <img src="windows.png" alt="Windows XP Logo" class="w-64 mb-8" />
+    <div class="w-[150px] h-[10px] border-2 border-gray-400 rounded-lg overflow-hidden relative">
+      <div class="w-[9px] h-full gradient-box animate-loader absolute"></div>
+    </div>
+    <div class="absolute bottom-4 left-4 text-gray-400 text-sm">
+      Copyright © Microsoft Corporation
+    </div>
+    <div class="absolute bottom-4 right-4 text-white-400 text-sm">
+      Microsoft
+    </div>
+  </div>
+  <div id="image-screen" class="hidden flex flex-col items-center justify-center min-h-screen overflow-hidden">
+<img src="https://www.dafont.com/forum/attach/orig/7/7/777768.png" 
+     alt="Displayed Image" 
+     class="w-10000 h-auto mx-auto">
+  </div>
+</body>
+</html>

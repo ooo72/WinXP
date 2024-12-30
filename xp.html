@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Windows XP">
+  <meta property="og:description" content="That one famous 2004 desktop but in a website.">
+  <meta property="og:image" content="images/icons/icon-512x512.png">
+  <meta property="og:url" content="https://ooo72.github.io/WinXP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Windows XP">
+  <meta name="twitter:description" content="That one famous 2004 desktop but in a website.">
+  <meta name="twitter:image" content="images/icons/icon-384x384.png">
+  <link rel="manifest" href="/manifest.json">
+  <title>WinXP</title>
+</head>
+<style>
+@font-face {
+    font-family: 'calibri';
+    src: url('https://raw.githubusercontent.com/jondot/dotfiles/refs/heads/master/.fonts/calibri.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #ffffff;
+  background-image: url('Bliss.jpg');
+  background-size: cover;
+  font-size: 18px;
+  font-family: 'calibri', serif;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  cursor: url(cursor.png), auto;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+}
+#profile-image {
+     width: 80px;
+     height: 80px;
+     cursor: pointer;
+     border: transparent;
+}
+h2 {
+  margin: 0;
+  font-size: 1.5em;
+        }
+
+
+.taskbar {
+  background-color: #245EDC;
+  background: linear-gradient(to bottom, #245EDC 0%, #3f8cf3 9%, #245EDC 18%, #245EDC 92%, #1941A5 100%) center/cover no-repeat;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+}
+
+.start-button {
+  float: left;
+  margin-right: 166px;
+  cursor: pointer;
+}
+
+.start-button img {
+  height: 20px;
+  filter: drop-shadow(1px 1px 1px #222);
+  transform: translateY(4px);
+}
+.time {
+  height: 100%;
+  float: right;
+  font-family: calibri, monospace;
+  font-size: 14px;
+  line-height: 14px;
+  background: linear-gradient(to bottom, #1290E9 0%, #19B9F3 9%, #1290E9 18%, #1290E9 92%, #1941A5 100%) center/cover no-repeat;
+  box-shadow: 0px 5px 10px #14A5F0 inset, 0px 5px 10px #333333;
+  padding: 9px 15px 9px 25px;
+  border-left: 1px solid #092E51;
+  text-shadow: 1px 1px 2px #222;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+        html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            bottom: 7%;
+            right: 2%;
+        }
+        .image-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-box img {
+            width: 50px; 
+            height: 50px;
+            object-fit: cover;
+        }
+        .title {
+            margin-top: 10px;
+            font-size: 16px;
+            color: white; 
+        }
+           .start-menu {
+            position: fixed;
+            bottom: 40px;
+            left: 10px;
+            width: 350px;
+            height: 500px;
+            background: linear-gradient(to bottom, #5e9dd3, #c7dff5);
+            border: 2px solid #000080;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+        }
+
+        /* Start Menu Header */
+        .start-menu-header {
+            background-color: #245EDC;
+            background: linear-gradient(to bottom, #245EDC 0%, #3f8cf3 9%, #245EDC 18%, #245EDC 92%, #1941A5 100%) center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .start-menu-header img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+        }
+
+        .start-menu-header h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        /* Left Section */
+        .start-menu-left {
+            background-color: white;
+            width: 50%;
+            height: calc(94% - 60px); /* Subtract header height */
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .start-menu-left .menu-item {
+            font-weight: bold;
+            margin: 10px 0;
+            color: black;
+        }
+
+        .start-menu-left .menu-subtext {
+            font-size: 12px;
+            color: gray;
+        }
+
+        .start-menu-left .all-programs {
+            font-weight: bold;
+            color: black;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Right Section */
+        .start-menu-right {
+            background-color: #dbeeff;
+            width: 50%;
+            height: calc(94% - 60px); /* Subtract header height */
+            float: right;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+          .start-menu-right .menu-item {
+              font-weight: bold;
+              color: #000080;
+              margin: 10px 0;
+              font-size: 12px; /* Smaller text */
+        }
+        .start-menu-right .menu-divider {
+            border-top: 1px solid #a9c5e3;
+            margin: 10px 0;
+        }
+</style>
+<body>
+  <div class="taskbar">
+  <div class="time">11:20 PM</div>
+  <div class="start-button">
+  <img src="images/startbutton.png" alt="startButton" id="start-button" style="width: 55%; height: 18%;">
+  </div>
+</div>
+    <div class="start-menu" id="startMenu">
+      <!-- Start Menu Header -->
+      <div class="start-menu-header">
+        <img src="images/icons/icon-192x192.png" alt="User Icon" id="profile-image">
+        <h2>Desktop</h2>
+      </div>
+
+      <!-- Left Section -->
+      <div class="start-menu-left">
+        <div class="menu-item">Internet</div>
+        <div class="menu-subtext">Internet Explorer</div>
+
+        <div class="menu-item">E-mail</div>
+        <div class="menu-subtext">Outlook Express</div>
+
+        <div class="menu-item">Word</div>
+
+        <div class="all-programs">
+          <span>All Programs</span>
+          <img src="images/startarrow.png" alt="Arrow" width="12" height="12">
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="start-menu-right">
+        <div class="menu-item">My Computer</div>
+        <div class="menu-item">My Recent Documents</div>
+        <div class="menu-item">My Pictures</div>
+        <div class="menu-item">My Music</div>
+        <div class="menu-item">My Network Places</div>
+
+        <div class="menu-divider"></div>
+
+        <div class="menu-item">Control Panel</div>
+        <div class="menu-item">Printers and Faxes</div>
+
+        <div class="menu-divider"></div>
+
+        <div class="menu-item" onclick="window.location.href='https://support.microsoft.com'; this.style.backgroundColor='blue'; this.style.color='white';">Help and Support</div>
+        <div class="menu-item">Search</div>
+        <div class="menu-item">Run...</div>
+      </div>
+    </div>
+</div>
+  <div class="container">
+  <div class="image-box">
+    <img src="appicons/Computer.png" alt="Image 1">
+    <div class="title">My Computer</div>
+  </div>
+  <div class="image-box">
+    <img src="appicons/Documents.png" alt="Image 2">
+    <div class="title">My Documents</div>
+  </div>
+  <div class="image-box">
+    <img src="appicons/Network-Places.png" alt="Image 3">
+    <div class="title">My Network Places</div>
+  </div>
+  <div class="image-box">
+    <img src="appicons/Recycle-Bin.png" alt="Image 2">
+    <div class="title">Recycle Bin</div>
+  </div>
+  <script src="script.js"></script>
+<noscript>
+<strong>Please enable javascript in your browser to run windows.
+</strong>
+</noscript>
+</body>
+</html>

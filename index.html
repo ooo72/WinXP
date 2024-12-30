@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: 'Fixedsys';
+      src: url('https://github.com/bkaradzic/dotvim/raw/refs/heads/master/fonts/fixedsys-excelsior-301.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'Fixedsys', monospace;
+      background-color: black;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      padding-left: 10px;
+    }
+
+    .text {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .operating-systems {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .operating-systems:hover {
+      color: cyan;
+    }
+
+    .instruction {
+      margin-top: 20px;
+      font-size: 14px;
+      color: white;
+    }
+      .instruction-2 {
+      margin-top: 5px;
+      font-size: 14px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text">Please select the operating system to start:</div>
+    <div id="os1" class="operating-systems selected">Microsoft Windows XP Professional</div>
+    <div id="os2" class="operating-systems">Unknown Operating System (Source)</div>
+    <div class="instruction">Use the up and down arrow keys to move the highlight to your choice.</div>
+    <div class="instruction-2">Press ENTER to choose.</div>
+  </div>
+
+  <script>
+    const options = document.querySelectorAll('.operating-systems');
+let selectedIndex = 0;
+
+function updateSelection() {
+  options.forEach((option, index) => {
+    if (index === selectedIndex) {
+      option.classList.add('selected');
+    } else {
+      option.classList.remove('selected');
+    }
+  });
+}
+
+function handleSelection() {
+  if (selectedIndex === 0) {
+    // Redirect to a new URL if "Microsoft Windows XP Professional" is selected
+    window.location.href = "welcome.html"; // Replace with the desired URL
+} else if (selectedIndex === 1) {
+  // Redirect to a different URL if "Unknown Operating System (Source)" is selected
+  window.location.href = "the-github-repository.git"; // The url to the github repository
+} else {
+  alert(`Booting: ${options[selectedIndex].textContent}`);
+}
+}
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowUp') {
+    selectedIndex = (selectedIndex - 1 + options.length) % options.length;
+    updateSelection();
+  } else if (event.key === 'ArrowDown') {
+    selectedIndex = (selectedIndex + 1) % options.length;
+    updateSelection();
+  } else if (event.key === 'Enter') {
+    handleSelection();
+  }
+});
+
+// Add click event listeners for both options
+options.forEach((option, index) => {
+  option.addEventListener('click', () => {
+    selectedIndex = index;
+    handleSelection();
+  });
+});
+
+// Simulate the blinking title
+let titles = ["Starting Windows XP...", "Starting Windows XP..", "Starting Windows XP."];
+let index = 0;
+
+setInterval(() => {
+  document.title = titles[index];
+  index = (index + 1) % titles.length;
+}, 500);
+  </script>
+</body>
+
+</html>
