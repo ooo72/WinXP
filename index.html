@@ -80,11 +80,9 @@ function updateSelection() {
 
 function handleSelection() {
   if (selectedIndex === 0) {
-    // Redirect to a new URL if "Microsoft Windows XP Professional" is selected
-    window.location.href = "welcome.html"; // Replace with the desired URL
+    window.location.href = "welcome.html"; 
 } else if (selectedIndex === 1) {
-  // Redirect to a different URL if "Unknown Operating System (Source)" is selected
-  window.location.href = "the-github-repository.git"; // The url to the github repository
+  window.location.href = "https://github.com/ooo72/WinXP"; // The url to the github repository
 } else {
   alert(`Booting: ${options[selectedIndex].textContent}`);
 }
@@ -109,7 +107,6 @@ options.forEach((option, index) => {
   });
 });
 
-// Simulate the blinking title
 let titles = ["Starting Windows XP...", "Starting Windows XP..", "Starting Windows XP."];
 let index = 0;
 
