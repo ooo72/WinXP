@@ -1,7 +1,7 @@
 {
   "name": "Windows XP",
   "short_name": "WinXP",
-  "background_color": "#000000",
+  "background_color": "black",
   "display": "fullScreen",
   "icons": [
     {
